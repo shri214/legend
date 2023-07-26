@@ -1,0 +1,106 @@
+@import '../../OyoSass//variable.scss';
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0px;
+  //   border-bottom: 2px solid $bottom;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.2);
+  & .logo {
+    font-size: 4rem;
+    font-weight: 900;
+    color: $logoColor;
+    &:hover {
+      -webkit-text-stroke: $black 2px;
+      color: $white;
+    }
+  }
+
+  & .searchBar {
+    display: flex;
+    flex-flow: row;
+    width: 60%;
+    & .input-search {
+      flex-basis: 40%;
+      position: relative;
+      & input:focus {
+        outline: none;
+        padding: 0px 10px;
+      }
+
+      & button {
+        position: absolute;
+        width: 156px;
+        top: 6px;
+        right: 10px;
+        background: #f2f2f2;
+        border-radius: 100px;
+        height: 50px;
+        display: block;
+        & span {
+          position: absolute;
+          left: 5px;
+          top: 13px;
+        }
+      }
+    }
+    & .dates {
+      flex-basis: 25%;
+      border: 1px solid $black;
+      display: flex;
+    }
+    & .search {
+      flex-basis: 17.5%;
+      & button {
+        background-color: $lightgreen;
+      }
+      & button:hover {
+        background-color: $darkgreen;
+        color: $white;
+      }
+    }
+    & .guest {
+      flex-basis: 17.5%;
+      border: 1px solid $black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+input,
+button {
+  height: 4rem;
+  width: 100%;
+  background-color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.listing-container {
+  position: absolute;
+  top: 120px;
+  box-shadow: 0 0 8px 5px #eae7e7;
+  & .strong-list {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+
+    align-items: center;
+    box-shadow: 0px 4px 7px rgba(83, 81, 81, 0.2);
+
+    & strong {
+      font-size: 1.5rem;
+      // margin-bottom: 10px;
+      padding: 10px 0px;
+    }
+  }
+  & .managing-btn {
+    display: flex;
+    flex-flow: row;
+    box-shadow: 0px 4px 7px rgba(83, 81, 81, 0.2);
+    & button {
+      border: none;
+    }
+  }
+}

@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef } from 'react';
+// import { Counter, TsLearning } from './Component/TsLearning';
+// import ProductList from './Component/ProductLists';
+// import { CartContext } from './Component/ProductLists/CreateContext';
+import { contextRooms } from './OyoComponents/contextRooms';
 
+import Page from './OyoComponents/Page';
+import { roomStore } from './OyoComponents/Header/roomStore';
+// import { CartModel } from './Component/ProductLists/ClassStore';
 function App() {
+  // const myRef = useRef(new CartModel()).current;
+
+  const roomsRef = useRef(new roomStore()).current;
+  // console.log('app file', roomsRef.rooms.get()[0].guest);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <TsLearning />
+      <Counter /> */}
+      {/* <CartContext.Provider value={myRef}>
+        <ProductList />
+      </CartContext.Provider> */}
+
+      {/* ============= */}
+      <contextRooms.Provider value={roomsRef}>
+        <Page />
+      </contextRooms.Provider>
+    </>
   );
 }
 
